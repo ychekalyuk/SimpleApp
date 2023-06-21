@@ -14,6 +14,8 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        print("Database FilePath : ", FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last ?? "Not Found")
+        
         startNetfoxNetworkDebugger()
         window = UIWindow(frame: UIScreen.main.bounds)
         let mainViewController = MainViewController()

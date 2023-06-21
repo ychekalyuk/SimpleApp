@@ -9,6 +9,7 @@ import UIKit
 
 protocol DetailsViewControllerProtocol: AnyObject {
     func loadUI(with item: Media)
+    func loadUI(savedMedia: SavedMedia)
 }
 
 final class DetailsViewController: UIViewController {
@@ -58,6 +59,13 @@ extension DetailsViewController: DetailsViewControllerProtocol {
         albumImageView.kf.setImage(with: URL(string: albumImageURLString))
         artistNameLabel.text = item.artistName
         trackNameLabel.text = item.trackName
+    }
+    
+    func loadUI(savedMedia: SavedMedia) {
+        artistNameLabel.text = savedMedia.artistName
+        trackNameLabel.text = savedMedia.trackName
+        guard let data = savedMedia.artworkUrl100 else { return }
+        albumImageView.image =  UIImage(data: data)
     }
 }
 

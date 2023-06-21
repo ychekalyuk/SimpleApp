@@ -49,11 +49,18 @@ final class ArtistTableViewCell: UITableViewCell {
 
 //MARK: - Public Methods
 extension ArtistTableViewCell {
-    func configure(with item: Media) {
+    func configure(item: Media) {
         guard let albumImageURLString = item.artworkUrl100 else { return }
         albumImageView.kf.setImage(with: URL(string: albumImageURLString))
         artistNameLabel.text = item.artistName
         trackNameLabel.text = item.trackName
+    }
+    
+    func configure(savedItem: SavedMedia) {
+        artistNameLabel.text = savedItem.artistName
+        trackNameLabel.text = savedItem.trackName
+        guard let data = savedItem.artworkUrl100 else { return }
+        albumImageView.image =  UIImage(data: data)
     }
 }
 

@@ -13,17 +13,19 @@ protocol DetailsViewPresenterProtocol {
 final class DetailsViewPresenter {
     
     weak var view: DetailsViewControllerProtocol?
-    private let model: Media
+    var model: Media = Media(artistName: "", trackName: "", artworkUrl100: "")
+    var savedModel: SavedMedia = SavedMedia()
+    private var isOnline: Bool
     
-    init(view: DetailsViewControllerProtocol, model: Media) {
+    init(view: DetailsViewControllerProtocol, isOnline: Bool) {
         self.view = view
-        self.model = model
+        self.isOnline = isOnline
     }
 }
 
 //MARK: - DetailsViewPresenterProtocol
 extension DetailsViewPresenter: DetailsViewPresenterProtocol {
     func didLoad() {
-        view?.loadUI(with: model)
+        isOnline ? view?.loadUI(with: model) : view?.loadUI(savedMedia: savedModel)
     }
 }
