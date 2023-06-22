@@ -79,6 +79,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C4D1EF7C2A44329100E6FEB7 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				C4ECE5602A43A9BB00866970 /* StorageService.swift */,
+				C4ECE5622A43AAB800866970 /* SavedMedia.xcdatamodeld */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
 		C4D54C4E2A41FF3800F0BCC3 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				C4ECE5572A425A5000866970 /* Extensions */,
+				C4D1EF7C2A44329100E6FEB7 /* Storage */,
 				C4ECE54B2A424F5800866970 /* Network */,
 				C4D54C6E2A423FDE00F0BCC3 /* Screens */,
 				C4D54C712A42408500F0BCC3 /* Storyboards */,
@@ -122,7 +132,6 @@
 		C4D54C6F2A42403E00F0BCC3 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				C4ECE5622A43AAB800866970 /* SavedMedia.xcdatamodeld */,
 				C4D54C632A41FF4200F0BCC3 /* Assets.xcassets */,
 			);
 			path = Source;
@@ -170,7 +179,6 @@
 				C4ECE5582A4261AB00866970 /* Models */,
 				C4ECE54C2A424F5900866970 /* SearchAPI.swift */,
 				C4ECE54D2A4250D600866970 /* SearchService.swift */,
-				C4ECE5602A43A9BB00866970 /* StorageService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
