@@ -81,7 +81,8 @@ private extension MainViewPresenter {
     func fetchData() {
         guard checkInternetConnection() else {
             view?.showErrorAlert()
-            StorageService.shared.fetchData { result in
+            StorageService.shared.fetchData { [weak self] result in
+                guard let self = self else { return }
                 switch result {
                 case .success(let savedItems):
                     self.savedItems = savedItems
